@@ -10,10 +10,10 @@ app.use('/', (req, res) => {
 
   // Forward the request to the external website
   request(url, (error, response, body) => {
-    if (!error && response.statusCode === 200) {
+    if (!error && response?.statusCode === 200) {
       res.send(body);
     } else {
-      res.status(response.statusCode).send(error || body);
+      res.status(response?.statusCode).send(error || body);
     }
   });
 });
