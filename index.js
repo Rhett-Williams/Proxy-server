@@ -9,6 +9,10 @@ app.use('/', (req, res) => {
   const url = req.url.slice(1); // Remove the leading slash
 
   // Forward the request to the external website
+app.use('/', (req, res) => {
+  const url = req.url.slice(1); // Remove the leading slash
+    console.log("req", JSON.stringify(req, null, 2))
+  // Forward the request to the external website
   request(url, (error, response, body) => {
     if (!error) {
       res.send(body);
