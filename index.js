@@ -7,7 +7,7 @@ const port = 3000; // Choose a suitable port
 // Define a route to handle proxy requests
 app.use('/', (req, res) => {
   const url = req.url.slice(1); // Remove the leading slash
-    console.log("req", JSON.stringify(req, null, 2))
+    console.log("req")
   // Forward the request to the external website
   request(url, (error, response, body) => {
     if (!error) {
